@@ -4,6 +4,13 @@ All notable changes to the "array-sort" will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.2] - 2023-10-03
+
+### Changed
+
+- Update dependencies.
+- Update development tooling.
+
 ## [0.0.1] - 2023-07-22
 
 ### Added
