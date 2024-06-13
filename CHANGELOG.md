@@ -4,6 +4,12 @@ All notable changes to the "array-sort" will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.4] - 2024-06-13
+
+### Removed
+
+- Remove comparison functions from the package. They are now part of a separate package.
+
 ## [0.0.3] - 2024-06-13
 
 ### Changed
