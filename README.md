@@ -1,6 +1,8 @@
 # Array Sort
 
-This library contains a simple function for sorting arrays, and some comparison functions (or comparison function creators).
+This library contains a simple function for sorting arrays.
+
+Previously, this library contained more than this, but at the moment, this is only a wrapper around the `Array.prototype.sort` method.
 
 ## Installation
 
