@@ -22,7 +22,8 @@ console.log(sortedArray);
 ```
 
 ```ts
-import { sortArray, compareNumberAsc } from '@gmjs/array-sort';
+import { sortArray } from '@gmjs/array-sort';
+import { compareNumberDesc } from '@gmjs/comparers';
 
 const array = [3, 1, 2];
 const sortedArray = sortArray(arr, compareNumberAsc());
@@ -52,80 +53,3 @@ console.log(array);
 console.log(sortedArray);
 // [1, 2, 3]
 ```
-
-### Comparison Functions
-
-#### `compareNumberAsc`
-
-This comparer will allow you to sort an array of numbers in ascending order.
-
-```ts
-const array = [3, 1, 2];
-const sortedArray = sortArray(arr, compareNumberAsc());
-console.log(sortedArray);
-// [1, 2, 3]
-```
-
-#### `compareNumberDesc`
-
-This comparer will allow you to sort an array of numbers in descending order.
-
-```ts
-const array = [3, 1, 2];
-const sortedArray = sortArray(arr, compareNumberDesc());
-console.log(sortedArray);
-// [3, 2, 1]
-```
-
-#### `compareStringAsc`
-
-This comparer will allow you to sort an array of strings in ascending order.
-
-```ts
-const array = ['c', 'a', 'b'];
-const sortedArray = sortArray(arr, compareStringAsc());
-console.log(sortedArray);
-// ['a', 'b', 'c']
-```
-
-##### `CompareStringOptions`
-
-The `compareStringAsc` function takes an optional parameter of type `CompareStringOptions`.
-
-```ts
-export type CompareStringSensivity = 'base' | 'accent' | 'case' | 'variant';
-export type CompareStringCaseFirst = 'upper' | 'lower' | 'none';
-
-export interface CompareStringOptions {
-  readonly locale?: string;
-  readonly sensitivity?: CompareStringSensivity;
-  readonly caseFirst?: CompareStringCaseFirst;
-}
-```
-
-If any option is not specified, by default the following will be used:
-
-```ts
-{
-  locale: 'en',
-  sensitivity: 'case',
-  caseFirst: 'upper',
-}
-```
-
-`sensitivity` option defines case and accent sensitivity of comparison. Check out [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator) link for more information.
-
-`caseFirst` option defines whether upper case or lower case letters should be sorted first. Check out [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator) link for more information. `none` option is converted to `undefined`.
-
-#### `compareStringDesc`
-
-This comparer will allow you to sort an array of strings in descending order.
-
-```ts
-const array = ['c', 'a', 'b'];
-const sortedArray = sortArray(arr, compareStringDesc());
-console.log(sortedArray);
-// ['c', 'b', 'a']
-```
-
-It uses the exact same comparison options as `compareStringAsc`, see [here](#comparestringoptions).
